@@ -15,7 +15,7 @@ public class StackUsingLinkedList {
     }
 
 
-void push(Object data)
+public void push(Object data)
 {
  if(top==null) {
      top=new LinkedList(data);
@@ -24,12 +24,12 @@ void push(Object data)
      top=new LinkedList(data).setNextNode(top);
  }
 
-void pop()
+public void pop()
 {
 top=top.next;
 }
 
-void print()
+public void print()
 {
     LinkedList pointer=top;
 while(pointer!=null)

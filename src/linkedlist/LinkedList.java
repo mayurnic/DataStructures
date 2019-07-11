@@ -19,6 +19,10 @@ public class LinkedList {
     {
         return node.data;
     }
+    public int getData()
+    {
+        return this.data;
+    }
 
     public void setNextNode(LinkedList node)
     {
