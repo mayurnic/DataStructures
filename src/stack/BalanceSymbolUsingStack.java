@@ -9,24 +9,36 @@ public class BalanceSymbolUsingStack {
     public static void main(String args[])
     {
         stack=new BalanceSymbolUsingStack();
-
-
-        System.out.println(stack.verifyBalanceExpression("{(())}"));
-        stack.print();
+        System.out.println(stack.verifyBalanceExpression("{{{[[[]]]}}}"));
+       // stack.print();
     }
 
-    private boolean verifyBalanceExpression(String expression) {
+    private boolean verifyBalanceExpression(String expression)
+    {
         char[]charArray=expression.toCharArray();
+
         for(char temp:charArray)
         {
-            if(top==null)
-            stack.push(temp);
-            else
+            if(temp=='(' ||temp=='[' ||temp=='{' )
+                stack.push(temp);
+            else if(top!=null)
             {
-
+                char temp1=top.data;
+                if(temp1=='(' && temp==')')
+                     stack.pop();
+                else if(temp1=='{' && temp=='}')
+                    stack.pop();
+                else if(temp1=='[' && temp==']')
+                    stack.pop();
+                else
+                    return false;
             }
-
+            else
+                return  false;
         }
+            if(top==null)
+               return true;
+
 
         return false;
     }
@@ -42,7 +54,7 @@ public class BalanceSymbolUsingStack {
 
     void pop()
     {
-
+        top=top.next;
     }
 
     void print()
@@ -56,36 +68,36 @@ public class BalanceSymbolUsingStack {
     }
 }
 
-    class LinkedListChar
+class LinkedListChar
+{
+
+    LinkedListChar next;
+    char data;
+
+    LinkedListChar(char data)
     {
-
-        LinkedListChar next;
-        char data;
-
-        LinkedListChar(char data)
-        {
-            next=null;
-            this.data=data;
-        }
+        next=null;
+        this.data=data;
+    }
 
 
-        LinkedListChar setNextNode(LinkedListChar next)
-        {
-            this.next=next;
-            return this;
-
-        }
-        LinkedListChar getNextNode()
-        {
-            return this.next;
-        }
-
-        void addNode(char data)
-        {
-            this.next=new LinkedListChar(data);
-        }
-
-
-
+    LinkedListChar setNextNode(LinkedListChar next)
+    {
+        this.next=next;
+        return this;
 
     }
+    LinkedListChar getNextNode()
+    {
+        return this.next;
+    }
+
+    void addNode(char data)
+    {
+        this.next=new LinkedListChar(data);
+    }
+
+
+
+
+}
