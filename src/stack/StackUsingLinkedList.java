@@ -15,7 +15,7 @@ public class StackUsingLinkedList {
     }
 
 
-void push(int data)
+void push(Object data)
 {
  if(top==null) {
      top=new LinkedList(data);
@@ -26,7 +26,7 @@ void push(int data)
 
 void pop()
 {
-
+top=top.next;
 }
 
 void print()
@@ -49,9 +49,9 @@ class LinkedList
 {
 
 LinkedList next;
-int data;
+Object data;
 
-LinkedList(int data)
+LinkedList(Object data)
 {
     next=null;
     this.data=data;
@@ -69,7 +69,7 @@ LinkedList getNextNode()
     return this.next;
 }
 
-void addNode(int data)
+void addNode(Object data)
 {
     this.next=new LinkedList(data);
 }
