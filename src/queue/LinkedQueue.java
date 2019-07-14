@@ -17,13 +17,24 @@ public class LinkedQueue {
         }
 
         linkedQueue.print();
-        linkedQueue.DeEnqueue();
+        linkedQueue.Dequeue();
 
-        linkedQueue.DeEnqueue();
+        linkedQueue.Dequeue();
 linkedQueue.print();
 
     }
 
+    public int  size()
+    {
+        int counter=0;
+        LinkedList pointer=front;
+        while(pointer!=null)
+        {
+            pointer=pointer.getNextNode();
+            counter++;
+        }
+        return counter;
+    }
     public void print()
     {
     front.printLinkedList(front);
@@ -41,7 +52,7 @@ linkedQueue.print();
     }
 
 
-    public void DeEnqueue()
+    public void Dequeue()
     {
         if(front==null)
         {

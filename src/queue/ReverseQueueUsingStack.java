@@ -17,7 +17,7 @@ public class ReverseQueueUsingStack {
         reverseQueueUsingStack.linkedQueue.print();
         while (reverseQueueUsingStack.linkedQueue.front!=null) {
             reverseQueueUsingStack.stackUsingLinkedList.push(reverseQueueUsingStack.linkedQueue.front.getData());
-            reverseQueueUsingStack.linkedQueue.DeEnqueue();
+            reverseQueueUsingStack.linkedQueue.Dequeue();
         }
 
         reverseQueueUsingStack.stackUsingLinkedList.print();
