@@ -7,31 +7,18 @@ public class BinaryTreePreorder {
     {
         BinaryTree bt=new BinaryTree();
         bt=bt.enterData();
-        PreOrderTraversal(bt);
+        preOrderTraversal(bt);
 
     }
 
-    public static void PreOrderTraversal(BinaryTree pointer)
+    public static void preOrderTraversal(BinaryTree pointer)
     {
 
-
-        if(pointer.getLeftNode()!=null)
-        {
-            parent=pointer;
-            PreOrderTraversal(pointer.leftNode);
+        if(pointer!=null) {
+            System.out.print(pointer.data);
+            preOrderTraversal(pointer.leftNode);
+            preOrderTraversal(pointer.rightNode);
         }
-
-        else
-        {
-
-            System.out.println(pointer.data);
-            System.out.println(parent.data);
-            PreOrderTraversal(parent.rightNode);
-
-        }
-
-
-
     }
 
 }

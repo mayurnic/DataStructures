@@ -29,6 +29,21 @@ public class BinaryTree {
         return rightNode;
     }
 
+    public int height(BinaryTree root)
+    {
+        if(root==null)
+            return 0;
+        else
+        {
+            int hl=height(root.leftNode);
+            int hr=height(root.rightNode);
+
+            if(hl>hr)
+                return hl+1;
+            else
+                return hr+1;
+        }
+    }
     public BinaryTree getLeftNode()
     {
 return this.leftNode;
@@ -36,6 +51,19 @@ return this.leftNode;
     public BinaryTree getRightNode()
     {
         return this.rightNode;
+    }
+
+    public void print(BinaryTree root)
+    {
+        if(root!=null)
+        {
+           while(root.leftNode !=null || root.rightNode!=null) {
+               System.out.println(leftNode.data);
+               System.out.println();
+               print(root.leftNode);
+               print(root.rightNode);
+           }
+           }
     }
 
     public BinaryTree enterData()
