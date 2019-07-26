@@ -70,7 +70,7 @@ linkedQueue.print();
                 front = null;
                 rear=null;
             }
-            return temp;
+            return temp.getData();
         }
     }
 
