@@ -1,20 +1,24 @@
 package linkedlist;
 
+
 public class LinkedListObject {
 
+    public Object data;
+    public LinkedListObject nextNode;
 
-    Object data;
-    LinkedListObject nextNode;
+    public LinkedListObject()
+    {
 
+    }
     public LinkedListObject(Object data)
     {
         this.data=data;
     }
-
-    public LinkedListObject() {
-
+    public LinkedListObject setData(Object data)
+    {
+        this.data=data;
+        return this;
     }
-
     public Object getData(LinkedListObject node)
     {
         return node.data;
@@ -24,9 +28,10 @@ public class LinkedListObject {
         return this.data;
     }
 
-    public void setNextNode(LinkedListObject node)
+    public LinkedListObject setNextNode(LinkedListObject node)
     {
         this.nextNode=node;
+        return this;
     }
 
 

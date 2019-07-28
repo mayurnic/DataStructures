@@ -1,9 +1,11 @@
 package stack;
 
+import linkedlist.LinkedListObject;
+
 public class StackUsingLinkedList {
 
     int length;
-    LinkedList top=null;
+    LinkedListObject top=null;
     public static void main(String args[])
     {
         StackUsingLinkedList stack=new StackUsingLinkedList();
@@ -15,29 +17,44 @@ public class StackUsingLinkedList {
     }
 
 
-public void push(Object data)
-{
- if(top==null) {
-     top=new LinkedList(data);
- }
- else
-     top=new LinkedList(data).setNextNode(top);
- }
+    public void push(Object data)
+    {
+        if(top==null) {
+            top=new LinkedListObject();
+            top.data=data;
+        }
+        else {
+            LinkedListObject obj=new LinkedListObject();
+            obj.setData(data);
+            top=obj.setNextNode(top);
+        }
+        }
 
-public void pop()
-{
-top=top.next;
-}
+    public LinkedListObject pop()
+    {
+        LinkedListObject temp=top;
+        top=top.nextNode;
+        return temp;
 
-public void print()
-{
-    LinkedList pointer=top;
-while(pointer!=null)
-{
-    System.out.println(pointer.data);
-    pointer=pointer.next;
-}
-}
+    }
+
+    public boolean isEmpty()
+    {
+        if(top==null)
+            return true;
+
+        return false;
+    }
+
+    public void print()
+    {
+        LinkedListObject pointer=top;
+        while(pointer!=null)
+        {
+            System.out.println(pointer.data);
+            pointer=pointer.nextNode;
+        }
+    }
 
 
 
@@ -48,31 +65,34 @@ while(pointer!=null)
 class LinkedList
 {
 
-LinkedList next;
-Object data;
+    public LinkedList next;
+    public Object data;
 
-LinkedList(Object data)
+    public LinkedList(Object data)
+    {
+        next=null;
+        this.data=data;
+    }
+
+public Object getData(LinkedList node)
 {
-    next=null;
-    this.data=data;
+    return node.data;
 }
+   public LinkedList setNextNode(LinkedList next)
+    {
+        this.next=next;
+        return this;
 
+    }
+    public LinkedList getNextNode()
+    {
+        return this.next;
+    }
 
-LinkedList setNextNode(LinkedList next)
-{
-    this.next=next;
-    return this;
-
-}
-LinkedList getNextNode()
-{
-    return this.next;
-}
-
-void addNode(Object data)
-{
-    this.next=new LinkedList(data);
-}
+    public void addNode(Object data)
+    {
+        this.next=new LinkedList(data);
+    }
 
 
 
