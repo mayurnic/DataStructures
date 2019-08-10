@@ -7,6 +7,12 @@ public class BinaryTreeObject {
     BinaryTreeObject leftNode;
     BinaryTreeObject rightNode;
 
+
+
+    boolean isEquals(BinaryTreeObject temp)
+    {
+    return (Integer)this.data==(Integer)temp.data;
+    }
     BinaryTreeObject()
     {
 
