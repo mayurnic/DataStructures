@@ -11,7 +11,7 @@ public class Graph {
     {
         this.vertices=vertices;
         linkedListObjects=new GraphLinkedListObject[vertices];
-        for(int i=0; i<5;i++)
+        for(int i=0; i<vertices;i++)
         {
             linkedListObjects[i]=new GraphLinkedListObject(i);
         }
