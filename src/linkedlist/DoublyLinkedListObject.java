@@ -86,7 +86,7 @@ public class DoublyLinkedListObject {
         for(int i=2; i<20; i++)
         {
             pointer.nextNode=new DoublyLinkedListObject(i);
-            //pointer.setNextNode(pointer.nextNod);
+            //pointer.setNextNode(pointer.nextNod);  b
             pointer=pointer.nextNode;
         }
         pointer.nextNode=head.nextNode.nextNode;
