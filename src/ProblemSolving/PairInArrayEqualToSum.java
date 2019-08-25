@@ -1,4 +1,4 @@
-package ProblemSolving.src;
+package ProblemSolving;
 
 import java.util.HashSet;
 
